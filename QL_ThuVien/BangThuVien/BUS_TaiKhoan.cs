@@ -32,5 +32,28 @@ namespace BangThuVien
             dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
         }
+        public frmthongtinpphongkh()
+        {
+            InitializeComponent();
+        }
+
+        private void frm_load(object sender, EventArgs e)
+        {
+            phongBLL pbll = new phongBLL();
+            dataGridView1.DataSource = pbll.hienthithongtinphong();
+        }
+
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmdangnhap frm = new frmdangnhap();
+            frm.Show();
+
+        }
     }
 }

@@ -21,19 +21,11 @@ namespace BangThuVien
             arrPara[0] = new SqlParameter("@MaBD", SqlDbType.NVarChar, 10);
             arrPara[0].Value = _MaBD;
 
-            dt = dbcon.executeSelectQuery(str, arrPara);
+           // dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
         }
         // Tao bang de hien thi ban doc
-        public DataTable HienThiBanDoc()
-        {
-            string sql = "SELECT * FROM dbo.BanDoc";
-            DataTable dt = new DataTable();
-            SqlConnection con = new SqlConnection(KetNoi.connect());
-            SqlDataAdapter da = new SqlDataAdapter(sql, con);
-            da.Fill(dt);
-            return dt;
-        }
+     
         //Them ban doc
 		public void ThemBanDoc(string HoTen, string GioiTinh, DateTime NgaySinh, string CMND, string MaLop, string DiaChi, string Email, string DienThoai)
         {
