@@ -122,21 +122,7 @@ namespace BangThuVien
             return dt;
         }
         public bool UodateSoLuongDauSachID(string _MaDauSach)
-        {
-            bool b = true;
-            string str = string.Format("UpdateSLTL");
-            SqlConnection con = new SqlConnection(AppConfig.connectionString());
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand(str, con);
-            cmd.Parameters.AddWithValue("@MaDS", _MaDauSach);
-            cmd.Parameters.AddWithValue("@SoLuong", -1);
-            cmd.CommandType = CommandType.StoredProcedure;
-            if (cmd.ExecuteNonQuery() > 0)
-                b = true;
-            con.Close();
-            return b;
-        }
+      
         public bool UodateSoLuongTLID_TraSach(string _MaTL)
         {
             bool b = true;

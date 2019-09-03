@@ -21,7 +21,7 @@ namespace BangThuVien
             arrPara[0] = new SqlParameter("@MaBD", SqlDbType.NVarChar, 10);
             arrPara[0].Value = _MaBD;
 
-           // dt = dbcon.executeSelectQuery(str, arrPara);
+           dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
         }
         // Tao bang de hien thi ban doc
@@ -45,8 +45,23 @@ namespace BangThuVien
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
+        
+          {
+            bool b = true;
+        string str = string.Format("UpdateSLTL");
+        SqlConnection con = new SqlConnection(AppConfig.connectionString());
+        con.Open();
+
+            SqlCommand cmd = new SqlCommand(str, con);
+        cmd.Parameters.AddWithValue("@MaDS", _MaDauSach);
+            cmd.Parameters.AddWithValue("@SoLuong", -1);
+            cmd.CommandType = CommandType.StoredProcedure;
+            if (cmd.ExecuteNonQuery() > 0)
+                b = true;
+            con.Close();
+            return b;
         }
-		public void SuaBanDoc(string MaBD, string HoTen, string GioiTinh, DateTime NgaySinh, string CMND, string MaLop, string DiaChi, string Email, string DienThoai)
+    public void SuaBanDoc(string MaBD, string HoTen, string GioiTinh, DateTime NgaySinh, string CMND, string MaLop, string DiaChi, string Email, string DienThoai)
         {
             string sql = "SuaBanDoc";
             SqlConnection con = new SqlConnection(KetNoi.connect());

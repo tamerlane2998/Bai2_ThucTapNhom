@@ -55,5 +55,13 @@ namespace BangThuVien
             frm.Show();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            frmCriticalItems CI = new frmCriticalItems();
+            CI.Show();
+        }
+
     }
 }
