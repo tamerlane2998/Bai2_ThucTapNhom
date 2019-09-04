@@ -12,7 +12,7 @@ namespace KetNoiDB
 
         public static String connect()
         {
-            return (@"Data Source=DESKTOP-2SCAQKB;Initial Catalog=QL_ThuVien;Integrated Security=True");
+            return (@"");
         }
     }
 }

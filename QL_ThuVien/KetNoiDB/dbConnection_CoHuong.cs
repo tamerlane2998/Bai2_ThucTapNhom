@@ -174,7 +174,7 @@ namespace KetNoiDB
             }
             return dataTable;
         }
- 
+  
         /// <method>
         /// Insert Query
         /// </method>
@@ -229,38 +229,15 @@ namespace KetNoiDB
             }
             return true;
         }
- 
-        /// <method>
-        /// Update Query
-        /// </method>
-        public bool executeUpdateQuery(String _query, SqlParameter[] sqlParameter)
-        {
-            SqlCommand myCommand = new SqlCommand();
-            try
-            {
-                myCommand.Connection = openConnection();
-                myCommand.CommandText = _query;
-                myCommand.Parameters.AddRange(sqlParameter);
-                myAdapter.UpdateCommand = myCommand;
-                myCommand.ExecuteNonQuery();
-            }
-            catch (SqlException e)
-            {
-                Console.Write("Error - Connection.executeUpdateQuery - Query: " + _query + " \nException: " + e.StackTrace.ToString());
-                return false;
-            }
-            finally
-            {
-                myAdapter.Dispose();
-                myCommand.Dispose();
-            }
-            return true;
-        }
 
-        /// <method>
-        /// Update Query
-        /// </method>
-        public bool executeUpdateProcedureQuery(String _query, SqlParameter[] sqlParameter)
+    /// <method>
+    /// Update Query
+    /// </method>
+    public frmthongtinpphongkh()
+    {
+        InitializeComponent();
+    }
+    public bool executeUpdateProcedureQuery(String _query, SqlParameter[] sqlParameter)
         {
             SqlCommand myCommand = new SqlCommand();
             try
@@ -285,10 +262,6 @@ namespace KetNoiDB
             return true;
         }	
         
-     
-             /// <method>
-        /// Delete Query
-        /// </method>
         public bool executeDeleteQuery(String _query, SqlParameter[] sqlParameter)
         {
             SqlCommand myCommand = new SqlCommand();
@@ -334,11 +307,7 @@ namespace KetNoiDB
                 Console.Write("Error - Connection.executeUpdateQuery - Query: " + _query + " \nException: " + e.StackTrace.ToString());
                 return false;
             }
-            finally
-            {
-                myAdapter.Dispose();
-                myCommand.Dispose();
-            }
+            
             return true;
         }
 }

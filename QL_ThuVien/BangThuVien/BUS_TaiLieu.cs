@@ -68,6 +68,10 @@ namespace BangThuVien
             get { return tacgia; }
             set { tacgia = value; }
         }
+        public frmthongtinpphongkh()
+        {
+            InitializeComponent();
+        }
         public DataTable TimKiemSachID(string _MaSach)
         {
             DataTable dt = new DataTable();
@@ -91,6 +95,21 @@ namespace BangThuVien
             arrPara[0].Value = _MaSach;
 
             dt = dbcon.executeSelectQuery(str, arrPara);
+            return dt;
+        }
+        public DataTable ThongKeSachDaMuonTheoID1(string _MaBD)
+        {
+            string str = string.Format("ThongKeSachDaMuon");
+            DataTable dt = new DataTable();
+
+            SqlConnection con = new SqlConnection(KetNoi.connect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@MaBD", _MaBD);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
             return dt;
         }
         public DataTable TimKiemMaSachTheoMaDauSach(string _MaDauSach)
