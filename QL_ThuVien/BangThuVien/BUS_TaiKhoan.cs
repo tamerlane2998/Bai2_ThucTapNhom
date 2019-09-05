@@ -32,14 +32,11 @@ namespace BangThuVien
             dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
         }
-     
-
         private void frm_load(object sender, EventArgs e)
         {
             phongBLL pbll = new phongBLL();
             dataGridView1.DataSource = pbll.hienthithongtinphong();
-        }       
-
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -50,9 +47,7 @@ namespace BangThuVien
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            frmCriticalItems CI = new frmCriticalItems();
-            CI.Show();
+            
         }
 
     }

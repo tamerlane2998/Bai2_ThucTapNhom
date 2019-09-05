@@ -68,10 +68,7 @@ namespace BangThuVien
             get { return tacgia; }
             set { tacgia = value; }
         }
-        public frmthongtinpphongkh()
-        {
-            InitializeComponent();
-        }
+       
         public DataTable TimKiemSachID(string _MaSach)
         {
             DataTable dt = new DataTable();
@@ -126,21 +123,21 @@ namespace BangThuVien
             dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
         }
-        public DataTable TimKiemSoLuongDauSachID(string _MaSach)
-        {
-            DataTable dt = new DataTable();
-            string str = string.Format(@"SELECT     dbo.DauSach.SoLuong
-                                        FROM         dbo.Sach INNER JOIN
-                                                              dbo.DauSach ON dbo.Sach.MaDauSach = dbo.DauSach.MaDauSach
-                                        WHERE     (dbo.Sach.MaSach = @MaSach)");
-            SqlParameter[] arrPara = new SqlParameter[1];
-            arrPara[0] = new SqlParameter("@MaSach", SqlDbType.NVarChar, 10);
-            arrPara[0].Value = _MaSach;
+        //public DataTable TimKiemSoLuongDauSachID(string _MaSach)
+        //{
+        //    DataTable dt = new DataTable();
+        //    string str = string.Format(@"SELECT     dbo.DauSach.SoLuong
+        //                                FROM         dbo.Sach INNER JOIN
+        //                                                      dbo.DauSach ON dbo.Sach.MaDauSach = dbo.DauSach.MaDauSach
+        //                                WHERE     (dbo.Sach.MaSach = @MaSach)");
+        //    SqlParameter[] arrPara = new SqlParameter[1];
+        //    arrPara[0] = new SqlParameter("@MaSach", SqlDbType.NVarChar, 10);
+        //    arrPara[0].Value = _MaSach;
 
-            dt = dbcon.executeSelectQuery(str, arrPara);
-            return dt;
-        }
-        public bool UodateSoLuongDauSachID(string _MaDauSach)
+        //    dt = dbcon.executeSelectQuery(str, arrPara);
+        //    return dt;
+        //}
+      
       
         public bool UodateSoLuongTLID_TraSach(string _MaTL)
         {

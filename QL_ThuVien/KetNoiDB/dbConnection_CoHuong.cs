@@ -254,11 +254,7 @@ namespace KetNoiDB
                 Console.Write("Error - Connection.executeUpdateQuery - Query: " + _query + " \nException: " + e.StackTrace.ToString());
                 return false;
             }
-            finally
-            {
-                myAdapter.Dispose();
-                myCommand.Dispose();
-            }
+            
             return true;
         }	
         
@@ -307,7 +303,7 @@ namespace KetNoiDB
                 Console.Write("Error - Connection.executeUpdateQuery - Query: " + _query + " \nException: " + e.StackTrace.ToString());
                 return false;
             }
-            
+       
             return true;
         }
 }

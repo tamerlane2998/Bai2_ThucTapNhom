@@ -14,6 +14,8 @@ namespace BangThuVien
         dbConnection dbcon = new dbConnection();
         // Tao bang tim kiem theo ID
         public DataTable TimKiemBDID(string _MaBD)
+               private void frm_load(object sender, EventArgs e)
+         
         {
             DataTable dt = new DataTable();
             string str = string.Format("Select * from dbo.BanDoc where (MaBD = @MaBD)");
