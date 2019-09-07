@@ -58,5 +58,18 @@ namespace QL_ThuVien
         {
             //label1.ForeColor = Color.Red;
         }
+		        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn thoát ??", "Question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+            //SetStyle(ControlStyles.ResizeRedraw, true);
+            timer1.Start();
+            timer2.Start();
+            timer3.Start();
+        }
     }
 }
