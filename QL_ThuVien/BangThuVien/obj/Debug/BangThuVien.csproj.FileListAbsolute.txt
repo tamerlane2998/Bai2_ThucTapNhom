@@ -1,0 +1,9 @@
+D:\minh\Bai3_QuanLyThuVien\QL_ThuVien\BangThuVien\bin\Debug\BangThuVien.dll
+D:\minh\Bai3_QuanLyThuVien\QL_ThuVien\BangThuVien\bin\Debug\BangThuVien.pdb
+D:\minh\Bai3_QuanLyThuVien\QL_ThuVien\BangThuVien\bin\Debug\KetNoiDB.dll
+D:\minh\Bai3_QuanLyThuVien\QL_ThuVien\BangThuVien\bin\Debug\KetNoiDB.pdb
+D:\minh\Bai3_QuanLyThuVien\QL_ThuVien\BangThuVien\obj\Debug\BangThuVien.csproj.CoreCompileInputs.cache
+D:\minh\Bai3_QuanLyThuVien\QL_ThuVien\BangThuVien\obj\Debug\BangThuVien.csproj.CopyComplete
+D:\minh\Bai3_QuanLyThuVien\QL_ThuVien\BangThuVien\obj\Debug\BangThuVien.dll
+D:\minh\Bai3_QuanLyThuVien\QL_ThuVien\BangThuVien\obj\Debug\BangThuVien.pdb
+D:\minh\Bai3_QuanLyThuVien\QL_ThuVien\BangThuVien\obj\Debug\BangThuVien.csprojAssemblyReference.cache
