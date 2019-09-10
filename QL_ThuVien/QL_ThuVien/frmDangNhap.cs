@@ -23,17 +23,17 @@ namespace QL_ThuVien
             if (dn.DangNhap(txtUserName.Text, txtPass.Text) == true)
             {
                 // bool x = false;
-                MessageBox.Show("Bạn đăng nhập thành công ^^", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đăng nhập thành công ^^", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmQLThuVien frm1 = new frmQLThuVien();
                 frm1.Show();
                 Hide();
             }
-            else MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai. Mời bạn nhập lại !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Ban có chắc muốn thoát ??", "Question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc muốn thoát ??", "Question", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 this.Close();
         }
 
@@ -57,6 +57,19 @@ namespace QL_ThuVien
         private void timer3_Tick(object sender, EventArgs e)
         {
             //label1.ForeColor = Color.Red;
+        }
+		        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn thoát ??", "Question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+            //SetStyle(ControlStyles.ResizeRedraw, true);
+            timer1.Start();
+            timer2.Start();
+            timer3.Start();
         }
     }
 }
