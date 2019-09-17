@@ -12,7 +12,7 @@ namespace BangThuVien
     {
         KetNoi cn = new KetNoi();
         dbConnection dbcon = new dbConnection();
-
+        // Tao bang tim kiem theo ID
         public DataTable TimKiemBDID(string _MaBD)
         {
             DataTable dt = new DataTable();
@@ -24,6 +24,7 @@ namespace BangThuVien
             dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
         }
+        // Tao bang de hien thi ban doc
         public DataTable HienThiBanDoc()
         {
             string sql = "SELECT * FROM dbo.BanDoc";
@@ -33,6 +34,7 @@ namespace BangThuVien
             da.Fill(dt);
             return dt;
         }
+        //Them ban doc
 		public void ThemBanDoc(string HoTen, string GioiTinh, DateTime NgaySinh, string CMND, string MaLop, string DiaChi, string Email, string DienThoai)
         {
             string sql = "ADDBanDoc";
@@ -72,6 +74,7 @@ namespace BangThuVien
             cmd.Dispose();
             con.Close();
         }
+        //Ham xoa ban doc
 		public void XoaBanDoc(string MaBD)
         {
             string sql = "Xoa_BD";
@@ -84,6 +87,7 @@ namespace BangThuVien
             cmd.Dispose();
             con.Close();
         }
+        //Thong ke sach da muon theo ID
 		public DataTable ThongKeSachDaMuonTheoID(string _MaBD)
         {
             string str = string.Format("ThongKeSachDaMuon");
@@ -120,6 +124,7 @@ namespace BangThuVien
             cmd.Dispose();
             con.Close();
         }
+        //Sua ban doc 1
 		public void SuaBanDoc1(string MaBD, string HoTen, string GioiTinh, DateTime NgaySinh, string CMND, string MaLop, string DiaChi, string Email, string DienThoai)
         {
             string sql = "SuaBanDoc";
