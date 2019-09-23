@@ -24,6 +24,14 @@ namespace BangThuVien
             dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
         }
-        
+        public DataTable HienThiBanDoc()
+        {
+            string sql = "SELECT * FROM dbo.BanDoc";
+            DataTable dt = new DataTable();
+            SqlConnection con = new SqlConnection(KetNoi.connect());
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
