@@ -78,6 +78,10 @@ namespace BangThuVien
             arrPara[0] = new SqlParameter("@MaSach", SqlDbType.NVarChar, 10);
             arrPara[0].Value = _MaSach;
 
+			            string str = string.Format("Select MaSach from Sach where (MaSach = @MaSach)");
+            SqlParameter[] arrPara = new SqlParameter[1];
+            arrPara[0] = new SqlParameter("@MaSach", SqlDbType.NVarChar, 10);
+            arrPara[0].Value = _MaSach;
             DataTable dt = new DataTable();
             string str = string.Format(@"SELECT     dbo.DauSach.*, dbo.Sach.MaSach
                                         FROM         dbo.Sach INNER JOIN
@@ -130,6 +134,10 @@ namespace BangThuVien
             SqlParameter[] arrPara = new SqlParameter[1];
             arrPara[0] = new SqlParameter("@MaSach", SqlDbType.NVarChar, 10);
             arrPara[0].Value = _MaSach;
+			            SqlConnection con = new SqlConnection(KetNoi.connect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(str, con);
+            cmd.CommandType = CommandType.StoredProcedure;
 
             dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
