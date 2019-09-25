@@ -33,5 +33,24 @@ namespace BangThuVien
             da.Fill(dt);
             return dt;
         }
+		public void ThemBanDoc(string HoTen, string GioiTinh, DateTime NgaySinh, string CMND, string MaLop, string DiaChi, string Email, string DienThoai)
+        {
+            string sql = "ADDBanDoc";
+            SqlConnection con = new SqlConnection(KetNoi.connect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@HoTen", HoTen);
+            cmd.Parameters.AddWithValue("@GioiTinh", GioiTinh);
+            cmd.Parameters.AddWithValue("@NgaySinh", NgaySinh);
+            cmd.Parameters.AddWithValue("@CMND", CMND);
+            cmd.Parameters.AddWithValue("@MaLop", MaLop);
+            cmd.Parameters.AddWithValue("@DiaChi", DiaChi);
+            cmd.Parameters.AddWithValue("@Email", Email);
+            cmd.Parameters.AddWithValue("@DienThoai", DienThoai);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
+        }
     }
 }
