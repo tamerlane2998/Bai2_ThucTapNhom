@@ -72,6 +72,17 @@ namespace BangThuVien
             cmd.Dispose();
             con.Close();
         }
-
+		public void XoaBanDoc(string MaBD)
+        {
+            string sql = "Xoa_BD";
+            SqlConnection con = new SqlConnection(KetNoi.connect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@MaBD", MaBD);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
+        }
     }
 }
