@@ -133,7 +133,26 @@ namespace QL_ThuVien
                     }
             }
         }
+        public void KhoaDK()
+        {
+            txtCMND.Enabled = txtDiaChi.Enabled = txtDienThoai.Enabled = txtEmail.Enabled = txtHoTen.Enabled = txtMaLop.Enabled = cbGT.Enabled = dtpNgaySinh.Enabled = false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
+            btnLuu.Enabled = false;
+        }
 
+        public void MoDK()
+        {
+            txtCMND.Enabled = txtDiaChi.Enabled = txtDienThoai.Enabled = txtEmail.Enabled = txtHoTen.Enabled = txtMaLop.Enabled = cbGT.Enabled = dtpNgaySinh.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
+            btnLuu.Enabled = true;
+        }
+
+        public void SetNull()
+        {
+            txtCMND.Text = txtDiaChi.Text = txtDienThoai.Text = txtEmail.Text = txtHoTen.Text = txtMa.Text = txtMaLop.Text = txtTimKiem.Text = "";
+            cbGT.Text = cbTK.Text = "";
+            dtpNgaySinh.Text = DateTime.Now.ToString();
+        }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if(cbTK.Text=="Mã Bạn đọc")
