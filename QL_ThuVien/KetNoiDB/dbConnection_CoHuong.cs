@@ -173,5 +173,60 @@ namespace KetNoiDB
 
             }
             return dataTable;
+        }
+ 
+        /// <method>
+        /// Insert Query
+        /// </method>
+        public bool executeInsertQuery(String _query, SqlParameter[] sqlParameter)
+        {
+            SqlCommand myCommand = new SqlCommand();
+            try
+            {
+                myCommand.Connection = openConnection();
+                myCommand.CommandText = _query;
+                myCommand.Parameters.AddRange(sqlParameter);
+                myAdapter.InsertCommand = myCommand;
+                myCommand.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                Console.Write("Error - Connection.executeInsertQuery - Query: " + _query + " \nException: \n" + e.StackTrace.ToString());
+                return false;
+            }
+            finally
+            {
+                myAdapter.Dispose();
+                myCommand.Dispose();
+            }
+            return true;
+        }
+
+        /// <method>
+        /// Insert Query
+        /// </method>
+        public bool executeInsertProcedureQuery(String _query, SqlParameter[] sqlParameter)
+        {
+            SqlCommand myCommand = new SqlCommand();
+            try
+            {
+                myCommand.Connection = openConnection();
+                myCommand.CommandText = _query;
+                myCommand.CommandType = CommandType.StoredProcedure;
+                myCommand.Parameters.AddRange(sqlParameter);
+                myAdapter.InsertCommand = myCommand;
+                myCommand.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                Console.Write("Error - Connection.executeInsertQuery - Query: " + _query + " \nException: \n" + e.StackTrace.ToString());
+                return false;
+            }
+            finally
+            {
+                myAdapter.Dispose();
+                myCommand.Dispose();
+            }
+            return true;
         }	
 }
