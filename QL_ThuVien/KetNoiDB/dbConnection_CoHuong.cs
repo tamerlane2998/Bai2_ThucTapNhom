@@ -228,5 +228,32 @@ namespace KetNoiDB
                 myCommand.Dispose();
             }
             return true;
+        }
+ 
+        /// <method>
+        /// Update Query
+        /// </method>
+        public bool executeUpdateQuery(String _query, SqlParameter[] sqlParameter)
+        {
+            SqlCommand myCommand = new SqlCommand();
+            try
+            {
+                myCommand.Connection = openConnection();
+                myCommand.CommandText = _query;
+                myCommand.Parameters.AddRange(sqlParameter);
+                myAdapter.UpdateCommand = myCommand;
+                myCommand.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                Console.Write("Error - Connection.executeUpdateQuery - Query: " + _query + " \nException: " + e.StackTrace.ToString());
+                return false;
+            }
+            finally
+            {
+                myAdapter.Dispose();
+                myCommand.Dispose();
+            }
+            return true;
         }	
 }
