@@ -27,7 +27,10 @@ namespace BangThuVien
             return dt;
         }
         // Tao bang de hien thi ban doc
+        private void button3_Click(object sender, EventArgs e)
+        {
 
+        }
         //Them ban doc
         public void ThemBanDoc(string HoTen, string GioiTinh, DateTime NgaySinh, string CMND, string MaLop, string DiaChi, string Email, string DienThoai)
         {
@@ -166,7 +169,10 @@ namespace BangThuVien
                 cmd.Dispose();
                 con.Close();
             }
+            private void button3_Click(object sender, EventArgs e)
+            {
 
+            }
         }
     }
 }

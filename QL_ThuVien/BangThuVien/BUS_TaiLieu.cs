@@ -90,7 +90,7 @@ namespace BangThuVien
             dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
         } 
-        }
+        
         public DataTable ThongKeSachDaMuonTheoID1(string _MaBD)
         {
             string str = string.Format("ThongKeSachDaMuon");
@@ -120,22 +120,22 @@ namespace BangThuVien
             dt = dbcon.executeSelectQuery(str, arrPara);
             return dt;
         }
-        //public DataTable TimKiemSoLuongDauSachID(string _MaSach)
-        //{
-        //    DataTable dt = new DataTable();
-        //    string str = string.Format(@"SELECT     dbo.DauSach.SoLuong
-        //                                FROM         dbo.Sach INNER JOIN
-        //                                                      dbo.DauSach ON dbo.Sach.MaDauSach = dbo.DauSach.MaDauSach
-        //                                WHERE     (dbo.Sach.MaSach = @MaSach)");
-        //    SqlParameter[] arrPara = new SqlParameter[1];
-        //    arrPara[0] = new SqlParameter("@MaSach", SqlDbType.NVarChar, 10);
-        //    arrPara[0].Value = _MaSach;
+        public DataTable TimKiemSoLuongDauSachID(string _MaSach)
+        {
+            DataTable dt = new DataTable();
+            string str = string.Format(@"SELECT     dbo.DauSach.SoLuong
+                                        FROM         dbo.Sach INNER JOIN
+                                                              dbo.DauSach ON dbo.Sach.MaDauSach = dbo.DauSach.MaDauSach
+                                        WHERE     (dbo.Sach.MaSach = @MaSach)");
+            SqlParameter[] arrPara = new SqlParameter[1];
+            arrPara[0] = new SqlParameter("@MaSach", SqlDbType.NVarChar, 10);
+            arrPara[0].Value = _MaSach;
 
-        //    dt = dbcon.executeSelectQuery(str, arrPara);
-        //    return dt;
-        //}
-      
-      
+            dt = dbcon.executeSelectQuery(str, arrPara);
+            return dt;
+        }
+
+
         public bool UodateSoLuongTLID_TraSach(string _MaTL)
         {
             bool b = true;
@@ -161,7 +161,10 @@ namespace BangThuVien
             da.Fill(dt);
             return dt;
         }
+        private void button3_Click(object sender, EventArgs e)
+        {
 
+        }
         public void ThemTaiLieu(string TacGia, string NhanDe, int SoLuong,int DoMat, string NgonNgu, string MaTheLoai, string MaNXB)
         {
             string sql = "ADDTaiLieu";
