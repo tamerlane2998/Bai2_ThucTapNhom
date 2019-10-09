@@ -170,8 +170,9 @@ namespace KetNoiDB
             }
             finally
             {
-
-            }
+            myAdapter.Dispose();
+            myCommand.Dispose();
+        }
             return dataTable;
         }
   

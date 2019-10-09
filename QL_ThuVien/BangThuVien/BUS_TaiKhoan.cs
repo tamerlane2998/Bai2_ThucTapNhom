@@ -18,7 +18,7 @@ namespace BangThuVien
         {
             DataTable dt = new DataTable();
             string str = string.Format("Select * from TaiKhoan");
-            dt = dbcon.executeSelectQueryNonParameter(str);
+            dt = dbcon.ToString(str);
             return dt;
         }
         public DataTable TimKiemID(string _ID)

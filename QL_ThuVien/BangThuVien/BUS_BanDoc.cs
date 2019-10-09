@@ -140,9 +140,9 @@ namespace BangThuVien
             public void SuaBanDoc1(string MaBD, string HoTen, string GioiTinh, DateTime NgaySinh, string CMND, string MaLop, string DiaChi, string Email, string DienThoai)
             {
                 string sql = "SuaBanDoc";
-                SqlConnection con = new SqlConnection(KetNoi.connect());
-                con.Open();
-                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlConnection conn = new SqlConnection(KetNoi.connect());
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@MaBD", MaBD);
                 cmd.Parameters.AddWithValue("@HoTen", HoTen);
@@ -155,24 +155,21 @@ namespace BangThuVien
                 cmd.Parameters.AddWithValue("@DienThoai", DienThoai);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
-                con.Close();
+                conn.Close();
             }
             public void XoaBanDoc1(string MaBD)
             {
                 string sql = "Xoa_BD";
-                SqlConnection con = new SqlConnection(KetNoi.connect());
-                con.Open();
-                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlConnection conn = new SqlConnection(KetNoi.connect());
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@MaBD", MaBD);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
-                con.Close();
+                conn.Close();
             }
-            private void button3_Click(object sender, EventArgs e)
-            {
-
-            }
+            
         }
     }
 }

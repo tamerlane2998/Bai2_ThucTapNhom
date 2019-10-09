@@ -11,7 +11,7 @@ namespace BangThuVien
     public class BUS_TaiLieu
     {
         KetNoi cn = new KetNoi();
-        dbConnection dbcon = new dbConnection();
+        dbConnection db = new dbConnection();
 
         private string matl;
 
