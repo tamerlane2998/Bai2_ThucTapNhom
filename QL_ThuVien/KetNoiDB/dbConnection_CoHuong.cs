@@ -284,4 +284,32 @@ namespace KetNoiDB
             }
             return true;
         }	
+        
+     
+             /// <method>
+        /// Delete Query
+        /// </method>
+        public bool executeDeleteQuery(String _query, SqlParameter[] sqlParameter)
+        {
+            SqlCommand myCommand = new SqlCommand();
+            try
+            {
+                myCommand.Connection = openConnection();
+                myCommand.CommandText = _query;
+                myCommand.Parameters.AddRange(sqlParameter);
+                myAdapter.DeleteCommand= myCommand;
+                myCommand.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                Console.Write("Error - Connection.executeUpdateQuery - Query: " + _query + " \nException: " + e.StackTrace.ToString());
+                return false;
+            }
+            finally
+            {
+                myAdapter.Dispose();
+                myCommand.Dispose();
+            }
+            return true;
+        }
 }
