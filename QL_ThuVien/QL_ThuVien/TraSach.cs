@@ -105,18 +105,5 @@ namespace QL_ThuVien
                 MessageBox.Show("Trả Sách Thất Bại.");
 
         }
-		        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn có chắc muốn thoát ??", "Question", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                this.Close();
-        }
-
-        private void frmDangNhap_Load(object sender, EventArgs e)
-        {
-            //SetStyle(ControlStyles.ResizeRedraw, true);
-            timer1.Start();
-            timer2.Start();
-            timer3.Start();
-        }
     }
 }

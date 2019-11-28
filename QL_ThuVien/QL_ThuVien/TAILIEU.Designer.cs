@@ -542,35 +542,7 @@
             this.ResumeLayout(false);
 
         }
-        private void btnLuu1_Click(object sender, EventArgs e)
-        {
-            if (chon == 1)
-            {
-                if (txtNhanDe.Text == "" || txtTG.Text == "" || txtSoLuong.Text == "" || cbMaTheLoai.Text == "" || cbMaNXB.Text == "" || txtDoMat.Text == "" || txtNgonNgu.Text == "")
-                    MessageBox.Show("Mời nhập đầy đủ thông tin!");
-                else
-                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn thêm nhân viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                {
-                    _tailieu.ThemTaiLieu(txtTG.Text, txtNhanDe.Text, int.Parse(txtSoLuong.Text), int.Parse(txtDoMat.Text), txtNgonNgu.Text, cbMaTheLoai.Text, cbMaNXB.Text);
-                    MessageBox.Show("Thêm thành công!");
-                    SetNull();
-                    frmTAILIEU_Load(sender, e);
-                }
-            }
-            else if (chon == 2)
-            {
-                if (txtNhanDe.Text == "" || txtTG.Text == "" || txtSoLuong.Text == "" || cbMaTheLoai.Text == "" || cbMaNXB.Text == "" || txtDoMat.Text == "" || txtNgonNgu.Text == "")
-                    MessageBox.Show("Mời nhập đầy đủ thông tin!");
-                else
-                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn Sửa nhân viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                {
-                    _tailieu.SuaTaiLieu(txtMaTL.Text, txtTG.Text, txtNhanDe.Text, int.Parse(txtSoLuong.Text), int.Parse(txtDoMat.Text), txtNgonNgu.Text, cbMaTheLoai.Text, cbMaNXB.Text);
-                    MessageBox.Show("Sửa thành công!");
-                    SetNull();
-                    frmTAILIEU_Load(sender, e);
-                }
-            }
-        }
+
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;

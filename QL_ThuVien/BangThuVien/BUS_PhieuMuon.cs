@@ -23,12 +23,7 @@ namespace BangThuVien
 
             SqlConnection con = new SqlConnection(AppConfig.connectionString());
             con.Open();
-                        string str = string.Format("Update PhieuMuon set TrangThai = -1 where MaPM = '" + _MaPM + "'");
-            SqlConnection con = new SqlConnection(AppConfig.connectionString());
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand(str, con);
-            cmd.CommandType = CommandType.Text;
+            
             SqlCommand cmd = new SqlCommand(str, con);
             cmd.Parameters.AddRange(arrpara);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -43,21 +38,12 @@ namespace BangThuVien
             string str = string.Format("Update PhieuMuon set TrangThai = -1 where MaPM = '" + _MaPM + "'");
             SqlConnection con = new SqlConnection(AppConfig.connectionString());
             con.Open();
-            string str = string.Format("LayMaPM_MaSach");
-            SqlConnection con = new SqlConnection(AppConfig.connectionString());
-            con.Open();
 
-            SqlCommand cmd = new SqlCommand(str, con);
-            cmd.Parameters.AddWithValue("@MaSach", _MaSach);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
             SqlCommand cmd = new SqlCommand(str, con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             con.Close();
         }
-		
-		
         public void UpdateTrangThaiPM_TraSach(string _MaSach)
         {
             DataTable dt = new DataTable();
